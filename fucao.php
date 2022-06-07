@@ -1,30 +1,38 @@
 <?php
-/*$nome = "Fulano";
-$sobrenome = "da Silva";
-$email = "fulanodasilva@gmail.com";
-$cidade = "Curitiba";
-$estado = "Parana" ;
-$cep = 83.000-000;*/
+/*Fazer validação de email se esta dentro dos padroes do email usando função em php*/
 
-function ValidarNome($nome = "douglas") {
-    if($nome == $nome) {
-        echo "Favor verificar nome pois esta diferente";
-    }else {
-        echo "oi meu nome é: $nome";
+function ValidaEmail($email) {
+    if(filter_var($email,FILTER_VALIDATE_EMAIL)) {
+        return true;
 
+    }else{
+        return false;
     }
-    validarNome();
-
 }
+$email = "marcelo@teste.com";
+    if($email == ValidaEmail($email)) {
+        echo 'Email verificado esta valido!! :)<br>';
+    }else {
+        echo "Favor verificar seu Email, pode estar com erro de digitação :(";
+
+        
+        
+    }
 
 
 
-function fazerCafe($tipo = "cappuccino ") {
+
+
+
+
+
+
+/*function fazerCafe($tipo = "cappuccino ") {
     return "Fazer uma xicara de cafe: $tipo <br>";
 }
 
 echo fazerCafe();
-echo fazerCafe("expresso");
+echo fazerCafe("expresso");*/
 
 
 
